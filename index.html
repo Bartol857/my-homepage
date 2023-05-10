@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>My Homepage | Bartol857</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script
+			src="https://kit.fontawesome.com/04aa9bf4f5.js"
+			crossorigin="anonymous"
+		></script>
+
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+	<body>
+		<main>
+			<div class="welcome">
+				<h1 class="welcome__text">Cześć Gałganie</h1>
+				<p class="time"></p>
+			</div>
+			<div class="today bg">
+				<div class="today-inner">
+					<p>Dziś jest:</p>
+					<p class="current-day"></p>
+				</div>
+				<div class="today-date">
+					<img src="./img/7345176951582534622.svg" alt="" />
+					<div>
+						<p class="date"></p>
+						<p class="day-number"></p>
+					</div>
+				</div>
+				<div class="today-inner">
+					<img src="./img/10979522011543238933.svg" alt="" />
+					<p class="sunrise"></p>
+				</div>
+				<div class="today-inner">
+					<img src="./img/10179591001543238934.svg" alt="" />
+					<p class="sunset"></p>
+				</div>
+			</div>
+			<div class="weathers bg">
+				<div class="top">
+					<div class="main-info">
+						<div class="info-box">
+							<h3 class="city-name"></h3>
+							<input type="text" placeholder="Wpisz nazwę miasta..." /><button>
+								Sprawdź
+							</button>
+							<p class="warning"></p>
+						</div>
+						<p class="temperature"></p>
+						<img
+							src="./img/unknown.png"
+							alt="Obrazek przedstawiający pogodę"
+							class="photo"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<div class="todolist bg">
+				<div class="todo">
+					<div class="header">
+						<h3>Lista zadań:</h3>
+						<input
+							type="text"
+							class="todo-input"
+							placeholder="Wpisz treść zadania..."
+						/>
+						<button class="btn-add">Dodaj zadanie</button>
+					</div>
+					<div class="todolist">
+						<p class="error-info">Brak zadań :D</p>
+						<ul></ul>
+					</div>
+				</div>
+
+				<div class="popup">
+					<h3>Edytuj zadanie:</h3>
+					<div class="popup-body">
+						<p class="popup-info"></p>
+						<input
+							type="text"
+							class="popup-input"
+							placeholder="Wprowadź nową treść zadania..."
+						/>
+						<button class="popup-btn accept">Zatwierdź</button>
+						<button class="popup-btn cancel">Anuluj</button>
+					</div>
+				</div>
+			</div>
+			<div class="links bg">
+				<a href="https://www.frontendmentor.io/home" target="_blank">
+					<img src="./img/frontend-mentor-logo.png" alt="" />
+				</a>
+				<a href="https://github.com/Bartol857" target="_blank">
+					<img src="./img/77158061540553610.svg" alt=""/>
+				</a>
+				<a href="https://www.figma.com" target="_blank">
+					<img src="./img/FIGMA_LOGO.png" alt=""/>
+				</a>
+				<a href="https://fontawesome.com/" target="_blank">
+					<img src="./img/Font_Awesome__logo.png" alt=""/>
+				</a>
+				<a href="https://fonts.google.com/" target="_blank">
+					<img src="./img/Google_Fonts_logo.png" alt=""/>
+				</a>
+				<a href="https://temp-mail.org/pl/" target="_blank">
+					<img src="./img/mail.png" alt=""/>
+				</a>
+			</div>
+		</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+</html>

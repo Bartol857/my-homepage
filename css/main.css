@@ -1,0 +1,258 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 22px;
+  background-image: url("../img/bg_fhd.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  padding: 5%;
+  min-height: 100vh;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+}
+
+input::-moz-placeholder {
+  color: #ddd;
+  font-family: "Montserrat", sans-serif;
+}
+
+input::placeholder {
+  color: #ddd;
+  font-family: "Montserrat", sans-serif;
+}
+
+button {
+  padding: 10px;
+  margin-left: 20px;
+  color: #fff;
+  font-family: inherit;
+  letter-spacing: 1.2px;
+  background: none;
+  border: 1px solid #ddd;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  color: #333;
+  background-color: #ddd;
+}
+
+.bg {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bg::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  background: url("../img/bg_fhd.jpg") center/cover fixed;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.welcome {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.welcome__text {
+  font-weight: normal;
+}
+.welcome .time {
+  font-size: 54px;
+}
+
+.today {
+  grid-column: 1/2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+.today .today-date {
+  display: flex;
+}
+.today .today-date img {
+  margin-right: 10px;
+}
+.today .current-day {
+  text-transform: uppercase;
+}
+
+.weathers {
+  grid-column: 1/2;
+  padding: 40px;
+}
+.weathers .main-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.weathers .temperature {
+  font-size: 54px;
+}
+.weathers .city-name {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.weathers .photo {
+  width: 140px;
+  height: 140px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.weathers .warning {
+  margin-top: 10px;
+  font-size: 14px;
+  color: tomato;
+}
+
+.todolist {
+  grid-column: 2/3;
+  grid-row: 2/5;
+}
+.todolist .fas {
+  pointer-events: none;
+}
+.todolist .todo {
+  text-align: center;
+}
+.todolist .header {
+  padding: 40px;
+}
+.todolist .header h3 {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.todolist .todo-input {
+  width: 70%;
+}
+.todolist .error-info {
+  margin-top: 20px;
+}
+.todolist .todolist {
+  padding: 20px 0;
+}
+.todolist .todolist li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  padding-left: 20px;
+  text-align: left;
+  list-style: none;
+}
+.todolist .tools {
+  display: inline-block;
+}
+.todolist .tools button {
+  padding: 15px 10px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.todolist .tools button:hover {
+  border: 1px solid #ddd;
+}
+.todolist .complete {
+  color: var(--light-blue);
+}
+.todolist .edit {
+  font-weight: bold;
+  color: rgb(15, 179, 69);
+}
+.todolist .delete {
+  color: tomato;
+}
+.todolist .completed {
+  color: #bbb;
+  text-decoration: line-through;
+  font-style: italic;
+}
+.todolist .popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  background-color: rgba(0, 0, 0, 0.98);
+  border-radius: 5px;
+}
+.todolist .popup h3 {
+  padding: 20px;
+}
+.todolist .popup-info {
+  margin-bottom: 20px;
+}
+.todolist .popup-body {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.todolist .popup-input {
+  width: 100%;
+}
+.todolist .popup-btn {
+  width: 30%;
+  display: inline-block;
+  padding: 10px 22px;
+  margin: 20px;
+}
+
+.links {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  padding: 20px 40px;
+}
+.links a {
+  margin-right: 15px;
+  text-decoration: none;
+}
+.links a :hover {
+  transform: scale(1.2);
+}
+.links img {
+  width: 34px;
+  height: 34px;
+}/*# sourceMappingURL=main.css.map */
