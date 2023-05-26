@@ -83,19 +83,19 @@ const getWeather = () => {
 			console.log(srise);
 
 			if (status.id >= 200 && status.id < 300) {
-				photo.setAttribute('src', './img/thinderstorm.png');
+				photo.setAttribute('src', './img/thinderstorm.svg');
 			} else if (status.id >= 300 && status.id < 400) {
-				photo.setAttribute('src', './img/drizzle.png');
+				photo.setAttribute('src', './img/drizzle.svg');
 			} else if (status.id >= 500 && status.id < 600) {
-				photo.setAttribute('src', './img/rain.png');
+				photo.setAttribute('src', './img/rain.svg');
 			} else if (status.id >= 600 && status.id < 700) {
-				photo.setAttribute('src', './img/ice.png');
+				photo.setAttribute('src', './img/ice.svg');
 			} else if (status.id >= 701 && status.id < 800) {
-				photo.setAttribute('src', './img/fog.png');
+				photo.setAttribute('src', './img/fog.svg');
 			} else if (status.id === 800) {
-				photo.setAttribute('src', './img/sun.png');
+				photo.setAttribute('src', './img/sun.svg');
 			} else if (status.id >= 801 && status.id < 900) {
-				photo.setAttribute('src', './img/cloud.png');
+				photo.setAttribute('src', './img/cloud.svg');
 			} else {
 				photo.setAttribute('src', './img/unkown.png');
 			}
@@ -153,7 +153,7 @@ const createToolsArea = () => {
 
 	editBtn = document.createElement('button');
 	editBtn.classList.add('edit');
-	editBtn.textContent = 'EDIT';
+	editBtn.textContent = 'EDYCJA';
 
 	deleteBtn = document.createElement('button');
 	deleteBtn.classList.add('delete');
@@ -218,5 +218,6 @@ input.addEventListener('keyup', enterKeyCheck);
 button.addEventListener('click', getWeather);
 
 setInterval(getTime, 1000);
+setInterval(getWeather, 300000);
 getTime();
 getSun();

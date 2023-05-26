@@ -11,7 +11,7 @@
 body {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 22px;
-	background-image: url('../img/bg_fhd.jpg');
+	background-image: url('../img/skyrim.jpg');
 	background-size: cover;
 	background-position: center;
 	color: white;
@@ -76,7 +76,7 @@ button:hover {
 	right: 0;
 	bottom: 0;
 	content: '';
-	background: url('../img/bg_fhd.jpg') center / cover fixed;
+	background: url('../img/skyrim.jpg') center / cover fixed;
 	filter: blur(10px);
 	z-index: -1;
 }
@@ -136,8 +136,8 @@ button:hover {
 	}
 
 	.photo {
-		width: 140px;
-		height: 140px;
+		width: 100px;
+		height: 100px;
 		object-fit: contain;
 	}
 
