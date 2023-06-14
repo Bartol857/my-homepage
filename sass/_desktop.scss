@@ -1,0 +1,77 @@
+@media (min-width: 768px) {
+
+    button {
+        margin-left: 20px;
+    }
+
+    .welcome {
+        width: 20%;
+    }
+
+	.today {
+		grid-column: 1/2;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 40px;
+
+		.today-date {
+
+			img {
+                display: block;
+				margin-right: 10px;
+			}
+		}
+
+        .today-date-inside{
+            display: block;
+            border: none;
+        }
+
+		.current-day {
+			text-transform: uppercase;
+		}
+
+		.today-inner {
+            flex-direction: column;
+
+			img {
+				width: 44px;
+			}
+		}
+	}
+
+	.weathers {
+		grid-column: 1/2;
+
+        input, button {
+            display: inline;
+        }
+
+        .main-info {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+	}
+
+	.todolist {
+		grid-column: 2/3;
+		grid-row: 2/5;
+
+        .todo-input {
+            width: 70%;
+        }
+	}
+
+	.links {
+		grid-column: 1/2;
+		grid-row: 4/5;
+        text-align: left;
+
+		img {
+			width: 34px;
+			height: 34px;
+		}
+	}
+}

@@ -55,8 +55,19 @@ const getSun = () => {
 		sunRise.textContent = sunRiseFormat;
 
 		const sunSetData = res.data.results.sunset;
-		const sunSetFormat = sunSetData.toLocaleString().slice(0, 4);
-		sunSet.textContent = sunSetFormat;
+		
+		let hrs = Number(sunSetData.match(/^(\d+)/)[1]);
+		let mnts = Number(sunSetData.match(/:(\d+)/)[1]);
+		let format = sunSetData.match(/\s(.*)$/)[1];
+		if (format == "PM" && hrs < 12) hrs = hrs + 12;
+		if (format == "AM" && hrs == 12) hrs = hrs - 12;
+        let hours = hrs.toString();
+        let minutes = mnts.toString();
+		if (hrs < 10) hours = "0" + hours;
+		if (mnts < 10) minutes = "0" + minutes;
+		let timeend = hours + ":" + minutes;
+		sunSet.textContent = timeend;
+
 	});
 };
 
@@ -80,7 +91,6 @@ const getWeather = () => {
 			warning.textContent = '';
 			input.value = '';
 
-			console.log(srise);
 
 			if (status.id >= 200 && status.id < 300) {
 				photo.setAttribute('src', './img/thinderstorm.svg');
@@ -113,7 +123,6 @@ const prepareDOMElements = () => {
 	errorInfo = document.querySelector('.error-info');
 	addBtn = document.querySelector('.btn-add');
 	ulList = document.querySelector('.todolist ul');
-
 	popup = document.querySelector('.popup');
 	popupInfo = document.querySelector('.popup-info');
 	popupInput = document.querySelector('.popup-input');
@@ -134,7 +143,7 @@ const addNewTodo = () => {
 		newTodo = document.createElement('li'); //tworzymy nowy element
 		newTodo.textContent = todoInput.value; //treść elementu jest pobierana z pola input
 		createToolsArea();
-		ulList.append(newTodo); //dodajemy nowy wlwmwnt do listy
+		ulList.append(newTodo); //dodajemy nowy elemwnt do listy
 		todoInput.value = ''; //po dodaniu elementu pole input zostaje wyczyszczone
 		errorInfo.textContent = ''; //po dodoniu elementu pole z informacja zostaje wyczyszczone
 	} else {
