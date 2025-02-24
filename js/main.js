@@ -32,7 +32,7 @@ let popupAddBtn;
 let popupCloseBtn;
 
 //API
-const API_LINK = 'https://api.openweathermap.org/data/3.0/onecall/overview?';
+const API_LINK = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const API_KEY = '&appid=25db98b4baeaae8f3186cd3bb3a1503b';
 const API_UNITS = '&units=metric';
 const myUrl = new URL('https://api.sunrisesunset.io/json?lat=53.1824306&lng=-22.0521838&date=today')
