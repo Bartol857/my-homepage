@@ -37,6 +37,7 @@ const API_KEY = '&appid=25db98b4baeaae8f3186cd3bb3a1503b';
 const API_UNITS = '&units=metric';
 const myUrl = new URL('https://api.sunrisesunset.io/json?lat=53.1824306&lng=-22.0521838&date=today');
 
+
 const getTime = () => {
 	const date = new Date();
 	currentDay.textContent = date.toLocaleString('pl', { weekday: 'long' });
@@ -46,7 +47,7 @@ const getTime = () => {
 
 const dayOfYear = (date) =>
 	Math.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
-    dayNumber.textContent = dayOfYear(new Date()) + ' dzień roku';
+dayNumber.textContent = dayOfYear(new Date()) + ' dzień roku';
 
 const getSun = () => {
 	axios.get(myUrl).then((res) => {
@@ -55,19 +56,18 @@ const getSun = () => {
 		sunRise.textContent = sunRiseFormat;
 
 		const sunSetData = res.data.results.sunset;
-		
+
 		let hrs = Number(sunSetData.match(/^(\d+)/)[1]);
 		let mnts = Number(sunSetData.match(/:(\d+)/)[1]);
 		let format = sunSetData.match(/\s(.*)$/)[1];
-		if (format == "PM" && hrs < 12) hrs = hrs + 12;
-		if (format == "AM" && hrs == 12) hrs = hrs - 12;
-        let hours = hrs.toString();
-        let minutes = mnts.toString();
-		if (hrs < 10) hours = "0" + hours;
-		if (mnts < 10) minutes = "0" + minutes;
-		let timeend = hours + ":" + minutes;
+		if (format == 'PM' && hrs < 12) hrs = hrs + 12;
+		if (format == 'AM' && hrs == 12) hrs = hrs - 12;
+		let hours = hrs.toString();
+		let minutes = mnts.toString();
+		if (hrs < 10) hours = '0' + hours;
+		if (mnts < 10) minutes = '0' + minutes;
+		let timeend = hours + ':' + minutes;
 		sunSet.textContent = timeend;
-
 	});
 };
 
@@ -85,12 +85,10 @@ const getWeather = () => {
 			temperature.textContent = temp.toFixed(1) + '°C';
 			cityName.textContent = res.data.name;
 
-			const srise = res.data.sys.sunrise
-
+			const srise = res.data.sys.sunrise;
 
 			warning.textContent = '';
 			input.value = '';
-
 
 			if (status.id >= 200 && status.id < 300) {
 				photo.setAttribute('src', './img/thinderstorm.svg');
