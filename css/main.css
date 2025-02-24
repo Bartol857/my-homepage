@@ -7,13 +7,13 @@
 }
 
 body {
-  font-family: "Ubuntu", sans-serif;
-  font-size: 22px;
-  background-image: url("../img/bg_fhd.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: white;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 21px;
+	background-image: url('../img/bg_fhd.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	color: white;
 }
 
 main {
