@@ -1,9 +1,10 @@
+
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -17,328 +18,304 @@ body {
 }
 
 main {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-content: center;
-  align-items: start;
-  padding: 5%;
-  min-height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+	justify-content: center;
+	align-items: start;
+	padding: 5%;
+	min-height: 100vh;
 }
 
 input {
-  font-size: 16px;
-  padding: 10px;
-  margin-top: 10px;
-  background: none;
-  border: none;
-  color: #fff;
-  border-bottom: 1px solid #ddd;
-  outline: none;
-}
-
-input::-moz-placeholder {
-  color: #ddd;
-  font-family: "Montserrat", sans-serif;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 10px;
+	background: none;
+	border: none;
+	color: #fff;
+	border-bottom: 1px solid #ddd;
+	outline: none;
 }
 
 input::placeholder {
-  color: #ddd;
-  font-family: "Montserrat", sans-serif;
+	color: #ddd;
+	font-family: 'Montserrat', sans-serif;
 }
 
 button {
-  padding: 10px;
-  color: #fff;
-  font-family: inherit;
-  letter-spacing: 1.2px;
-  background: none;
-  border: 1px solid #ddd;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+	padding: 10px;
+	color: #fff;
+	font-family: inherit;
+	letter-spacing: 1.2px;
+	background: none;
+	border: 1px solid #ddd;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 button:hover {
-  color: #333;
-  background-color: #ddd;
+	color: #333;
+	background-color: #ddd;
 }
 
 .bg {
-  position: relative;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  overflow: hidden;
+	position: relative;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 .bg::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: "";
-  background: url("../img/skyrim.jpg") center/cover fixed;
-  filter: blur(10px);
-  z-index: -1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	background: url('../img/bg_fhd.jpg') center / cover fixed;
+	filter: blur(10px);
+	z-index: -1;
 }
 
 .welcome {
-  grid-column: 1/-1;
-  grid-row: 1/2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.welcome__text {
-  font-weight: normal;
-}
-.welcome .time {
-  font-size: 54px;
-  width: 100%;
-  text-align: center;
+	grid-column: 1/-1;
+	grid-row: 1/2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__text {
+		font-weight: normal;
+	}
+
+	.time {
+		font-size: 54px;
+		width: 100%;
+		text-align: center;
+	}
 }
 
 .today {
-  grid-column: 1/-1;
-  grid-row: 2/3;
-  display: flex;
-  flex-direction: column;
-}
-.today .today-date {
-  display: flex;
-}
-.today .today-date img {
-  display: none;
-}
-.today .today-date-inside {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px 0;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-}
-.today .current-day {
-  text-transform: uppercase;
-}
-.today .today-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-.today .today-inner img {
-  width: 30px;
+	grid-column: 1/-1;
+	grid-row: 2/3;
+	display: flex;
+	flex-direction: column;
+
+
+	.today-date {
+		display: flex;
+
+		img {
+			display: none;
+		}
+	}
+
+	.today-date-inside {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 10px 0;
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #fff;
+	}
+
+
+	.current-day {
+		text-transform: uppercase;
+	}
+
+	.today-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px 0;
+
+		img {
+			width: 30px;
+		}
+	}
 }
 
 .weathers {
-  grid-column: 1/-1;
-  grid-row: 3/4;
-  padding: 40px;
-}
-.weathers input, .weathers button {
-  display: none;
-}
-.weathers .main-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-.weathers .temperature {
-  font-size: 54px;
-}
-.weathers .city-name {
-  font-size: 40px;
-  text-transform: uppercase;
-}
-.weathers .photo {
-  width: 100px;
-  height: 100px;
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-.weathers .warning {
-  margin-top: 10px;
-  font-size: 14px;
-  color: tomato;
+	grid-column: 1/-1;
+	grid-row: 3/4;
+	padding: 40px;
+
+	input, button {
+		display: none;
+	}
+
+	.main-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.temperature {
+		font-size: 54px;
+	}
+
+	.city-name {
+		font-size: 40px;
+		text-transform: uppercase;
+	}
+
+	.photo {
+		width: 100px;
+		height: 100px;
+		object-fit: contain;
+	}
+
+	.warning {
+		margin-top: 10px;
+		font-size: 14px;
+		color: tomato;
+	}
 }
 
 .todolist {
-  grid-column: 1/-1;
-  grid-row: 4/5;
-}
-.todolist .fas {
-  pointer-events: none;
-}
-.todolist .todo {
-  text-align: center;
-}
-.todolist .header {
-  padding: 40px;
-}
-.todolist .header h3 {
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.todolist .todo-input {
-  margin-bottom: 10px;
-  width: 90%;
-}
-.todolist .error-info {
-  margin-top: 20px;
-}
-.todolist .todolist {
-  padding: 20px 0;
-}
-.todolist .todolist li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px;
-  padding-left: 20px;
-  text-align: left;
-  list-style: none;
-}
-.todolist .tools {
-  display: inline-block;
-}
-.todolist .tools button {
-  padding: 15px 10px;
-  border: 1px solid transparent;
-  background-color: transparent;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.todolist .tools button:hover {
-  border: 1px solid #ddd;
-}
-.todolist .complete {
-  color: var(--light-blue);
-}
-.todolist .edit {
-  font-weight: bold;
-  color: rgb(15, 179, 69);
-}
-.todolist .delete {
-  color: tomato;
-}
-.todolist .completed {
-  color: #bbb;
-  text-decoration: line-through;
-  font-style: italic;
-}
-.todolist .popup {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  background-color: rgba(0, 0, 0, 0.98);
-  border-radius: 5px;
-}
-.todolist .popup h3 {
-  padding: 20px;
-}
-.todolist .popup-info {
-  margin-bottom: 20px;
-}
-.todolist .popup-body {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-.todolist .popup-input {
-  width: 100%;
-}
-.todolist .popup-btn {
-  width: 30%;
-  display: inline-block;
-  padding: 10px 22px;
-  margin: 20px;
+	grid-column: 1/-1;
+	grid-row: 4/5;
+
+	.fas {
+		pointer-events: none;
+	}
+
+	.todo {
+		text-align: center;
+	}
+
+	.header {
+		padding: 40px;
+	}
+
+	.header h3 {
+		text-transform: uppercase;
+		margin-bottom: 16px;
+	}
+
+	.todo-input {
+		margin-bottom: 10px;
+		width: 90%;
+	}
+
+	.error-info {
+		margin-top: 20px;
+	}
+
+	.todolist {
+		padding: 20px 0;
+	}
+
+	.todolist li {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 15px;
+		padding-left: 20px;
+		text-align: left;
+		list-style: none;
+	}
+
+	.tools {
+		display: inline-block;
+	}
+
+	.tools button {
+		padding: 15px 10px;
+		border: 1px solid transparent;
+		background-color: transparent;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+	.tools button:hover {
+		border: 1px solid #ddd;
+	}
+
+	.complete {
+		color: var(--light-blue);
+	}
+
+	.edit {
+		font-weight: bold;
+		color: rgb(15, 179, 69);
+	}
+
+	.delete {
+		color: tomato;
+	}
+
+	.completed {
+		color: #bbb;
+		text-decoration: line-through;
+		font-style: italic;
+	}
+
+	.popup {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 800px;
+		background-color: rgba(0, 0, 0, 0.98);
+		border-radius: 5px;
+	}
+
+	.popup h3 {
+		padding: 20px;
+	}
+
+	.popup-info {
+		margin-bottom: 20px;
+	}
+
+	.popup-body {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 20px;
+	}
+
+	.popup-input {
+		width: 100%;
+	}
+
+	.popup-btn {
+		width: 30%;
+		display: inline-block;
+		padding: 10px 22px;
+		margin: 20px;
+	}
 }
 
 .links {
-  grid-column: 1/-1;
-  grid-row: 5/6;
-  padding: 20px 40px;
-  text-align: center;
-}
-.links a {
-  margin-right: 15px;
-  text-decoration: none;
-}
-.links a :hover {
-  transform: scale(1.2);
-}
-.links img {
-  width: 20px;
-  height: 20px;
+	grid-column: 1/-1;
+	grid-row: 5/6;
+	padding: 20px 40px;
+	text-align: center;
+
+	a {
+		margin-right: 15px;
+		text-decoration: none;
+
+		:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	img {
+		width: 20px;
+		height: 20px;
+	}
 }
 
-@media (min-width: 768px) {
-  button {
-    margin-left: 20px;
-  }
-  .welcome {
-    width: 20%;
-  }
-  .today {
-    grid-column: 1/2;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-  }
-  .today .today-date img {
-    display: block;
-    margin-right: 10px;
-  }
-  .today .today-date-inside {
-    display: block;
-    border: none;
-  }
-  .today .current-day {
-    text-transform: uppercase;
-  }
-  .today .today-inner {
-    flex-direction: column;
-  }
-  .today .today-inner img {
-    width: 44px;
-  }
-  .weathers {
-    grid-column: 1/2;
-  }
-  .weathers input, .weathers button {
-    display: inline;
-  }
-  .weathers .main-info {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .todolist {
-    grid-column: 2/3;
-    grid-row: 2/5;
-  }
-  .todolist .todo-input {
-    width: 70%;
-  }
-  .links {
-    grid-column: 1/2;
-    grid-row: 4/5;
-    text-align: left;
-  }
-  .links img {
-    width: 34px;
-    height: 34px;
-  }
-}/*# sourceMappingURL=main.css.map */
+@import './desktop';
